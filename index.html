@@ -1,7 +1,7 @@
 
-<h2 class="sr-only">Interactive user-to-ticker relationship map from SI thread posts #31492–31566. Lines connect each participant to the tickers they discussed. Click any user or ticker node to highlight their connections.</h2>
+<h2 class="sr-only">Compact interactive user-to-ticker relationship map from SI thread posts #31492–31566. Click any node to highlight connections.</h2>
 <style>
-svg { display: block; width: 100%; }
+svg { display: block; width: 100%; max-width: 680px; margin: 0 auto; }
 .u-node { cursor: pointer; }
 .u-node rect { transition: opacity .15s; }
 .u-node:hover rect { opacity: .82; }
@@ -9,191 +9,157 @@ svg { display: block; width: 100%; }
 .t-node rect { transition: opacity .15s; }
 .t-node:hover rect { opacity: .82; }
 .edge { transition: opacity .2s, stroke-width .2s; }
-.edge.dim { opacity: .07; }
+.edge.dim { opacity: .06; }
 .edge.hi  { stroke-width: 2px; }
-.u-node.dim rect, .u-node.dim text { opacity: .15; }
-.t-node.dim rect, .t-node.dim text { opacity: .15; }
+.u-node.dim rect, .u-node.dim text { opacity: .12; }
+.t-node.dim rect, .t-node.dim text { opacity: .12; }
 </style>
-<svg viewBox="0 0 680 920" role="img">
-<title>User to ticker map</title>
-<desc>Network diagram connecting SI board participants to the tickers they discussed in posts 31492–31566.</desc>
+<svg viewBox="0 0 580 640" role="img">
+<title>User to ticker map — compact</title>
+<desc>Network diagram connecting SI board participants to tickers discussed in posts 31492–31566. Click to highlight.</desc>
 <defs>
-  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </marker>
 </defs>
 
-<!-- ── EDGES (drawn first so nodes sit on top) ── -->
-<!-- chowder edges -->
-<line class="edge" id="e-chowder-NVDA"  x1="136" y1="104" x2="470" y2="82"  stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-MU"    x1="136" y1="104" x2="470" y2="122" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-SMH"   x1="136" y1="104" x2="470" y2="162" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-ASML"  x1="136" y1="104" x2="470" y2="202" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-GLW"   x1="136" y1="104" x2="470" y2="242" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-BST"   x1="136" y1="104" x2="470" y2="322" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-AIO"   x1="136" y1="104" x2="470" y2="362" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-NXG"   x1="136" y1="104" x2="470" y2="402" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-QQI"   x1="136" y1="104" x2="470" y2="442" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-BSTZ"  x1="136" y1="104" x2="470" y2="482" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-DRAM"  x1="136" y1="104" x2="470" y2="522" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-SPXC"  x1="136" y1="104" x2="470" y2="562" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-ATO"   x1="136" y1="104" x2="470" y2="642" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-NEE"   x1="136" y1="104" x2="470" y2="682" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-GEV"   x1="136" y1="104" x2="470" y2="722" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-XLB"   x1="136" y1="104" x2="470" y2="842" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-JNJ"   x1="136" y1="104" x2="470" y2="762" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-FAST"  x1="136" y1="104" x2="470" y2="802" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-PEP"   x1="136" y1="104" x2="470" y2="882" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<!-- cemanuel edges -->
-<line class="edge" id="e-cemanuel-NVDA"  x1="136" y1="184" x2="470" y2="82"  stroke="#1D9E75" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-cemanuel-ATO"   x1="136" y1="184" x2="470" y2="642" stroke="#1D9E75" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-cemanuel-NEE"   x1="136" y1="184" x2="470" y2="682" stroke="#1D9E75" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-cemanuel-SPCX"  x1="136" y1="184" x2="470" y2="602" stroke="#1D9E75" stroke-width="1" opacity=".35"/>
-<!-- SeeksQuality edges -->
-<line class="edge" id="e-seeks-ATO"   x1="136" y1="264" x2="470" y2="642" stroke="#D85A30" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-seeks-NEE"   x1="136" y1="264" x2="470" y2="682" stroke="#D85A30" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-seeks-AEP"   x1="136" y1="264" x2="470" y2="742" stroke="#D85A30" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-seeks-TIPS"  x1="136" y1="264" x2="470" y2="282" stroke="#D85A30" stroke-width="1" opacity=".35"/>
-<!-- weathersystems edges -->
-<line class="edge" id="e-weather-SPCX" x1="136" y1="344" x2="470" y2="602" stroke="#7F77DD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-weather-MP"   x1="136" y1="344" x2="470" y2="182" stroke="#7F77DD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-weather-USAR" x1="136" y1="344" x2="470" y2="222" stroke="#7F77DD" stroke-width="1" opacity=".35"/>
-<!-- jritz0 edges -->
-<line class="edge" id="e-jritz-NBXG"  x1="136" y1="424" x2="470" y2="302" stroke="#BA7517" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-jritz-BST"   x1="136" y1="424" x2="470" y2="322" stroke="#BA7517" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-jritz-BSTZ"  x1="136" y1="424" x2="470" y2="482" stroke="#BA7517" stroke-width="1" opacity=".35"/>
-<!-- Max2.0 edges -->
-<line class="edge" id="e-max-BST"   x1="136" y1="504" x2="470" y2="322" stroke="#888780" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-max-BSTZ"  x1="136" y1="504" x2="470" y2="482" stroke="#888780" stroke-width="1" opacity=".35"/>
-<!-- macbolan edges -->
-<line class="edge" id="e-mac-BST"   x1="136" y1="584" x2="470" y2="322" stroke="#A32D2D" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-mac-BSTZ"  x1="136" y1="584" x2="470" y2="482" stroke="#A32D2D" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-mac-COST"  x1="136" y1="584" x2="470" y2="142" stroke="#A32D2D" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-mac-MA"    x1="136" y1="584" x2="470" y2="262" stroke="#A32D2D" stroke-width="1" opacity=".35"/>
-<!-- Steve Mac edges -->
-<line class="edge" id="e-steve-SPYI" x1="136" y1="664" x2="470" y2="342" stroke="#888780" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-steve-CME"  x1="136" y1="664" x2="470" y2="462" stroke="#888780" stroke-width="1" opacity=".35"/>
-<!-- QTI edges -->
-<line class="edge" id="e-qti-VXUS"  x1="136" y1="744" x2="470" y2="562" stroke="#0C447C" stroke-width="1.5" opacity=".5"/>
-<!-- Mannie edges -->
-<line class="edge" id="e-mannie-XLBI"  x1="136" y1="824" x2="470" y2="822" stroke="#888780" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-mannie-XLSI"  x1="136" y1="824" x2="470" y2="862" stroke="#888780" stroke-width="1" opacity=".35"/>
-<!-- mykesc2020 edges -->
-<line class="edge" id="e-myke-KO"   x1="136" y1="864" x2="470" y2="102" stroke="#888780" stroke-width="1" opacity=".35"/>
-<!-- InDivGrowth edges -->
-<line class="edge" id="e-indiv-ATO"  x1="136" y1="784" x2="470" y2="642" stroke="#888780" stroke-width="1" opacity=".35"/>
-<!-- chowder Rollover IRA node reference in XLB/XLBI -->
-<line class="edge" id="e-chowder-XLBI" x1="136" y1="104" x2="470" y2="822" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-DPG"  x1="136" y1="104" x2="470" y2="622" stroke="#378ADD" stroke-width="1" opacity=".35"/>
-<line class="edge" id="e-chowder-VZ"   x1="136" y1="104" x2="470" y2="902" stroke="#378ADD" stroke-width="1" opacity=".35"/>
+<!-- USER nodes: x=10, w=104, h=30, gap=4 -->
+<!-- ROW y centres: chowder=52, cemanuel=86, seeks=120, weather=154, jritz=188, max=222, mac=256, steve=290, qti=324, indiv=358, mannie=392, myke=426 -->
 
-<!-- ── USER NODES (left column) ── -->
-<g class="u-node" id="un-chowder" onclick="highlight('chowder')">
-  <rect x="20" y="82" width="116" height="44" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/>
-  <text class="th" x="78" y="104" text-anchor="middle" dominant-baseline="central" fill="#0C447C">chowder</text>
-</g>
-<g class="u-node" id="un-cemanuel" onclick="highlight('cemanuel')">
-  <rect x="20" y="162" width="116" height="44" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/>
-  <text class="th" x="78" y="184" text-anchor="middle" dominant-baseline="central" fill="#085041">cemanuel</text>
-</g>
-<g class="u-node" id="un-seeks" onclick="highlight('seeks')">
-  <rect x="20" y="242" width="116" height="44" rx="8" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
-  <text class="th" x="78" y="264" text-anchor="middle" dominant-baseline="central" fill="#712B13">SeeksQuality</text>
-</g>
-<g class="u-node" id="un-weather" onclick="highlight('weather')">
-  <rect x="20" y="322" width="116" height="44" rx="8" fill="#D4B8F0" stroke="#5B2D8E" stroke-width="0.5"/>
-  <text class="th" x="78" y="344" text-anchor="middle" dominant-baseline="central" fill="#3A1A6E">weathersystems</text>
-</g>
-<g class="u-node" id="un-jritz" onclick="highlight('jritz')">
-  <rect x="20" y="402" width="116" height="44" rx="8" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/>
-  <text class="th" x="78" y="424" text-anchor="middle" dominant-baseline="central" fill="#633806">jritz0</text>
-</g>
-<g class="u-node" id="un-max" onclick="highlight('max')">
-  <rect x="20" y="482" width="116" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
-  <text class="th" x="78" y="504" text-anchor="middle" dominant-baseline="central" fill="#444441">Max2.0</text>
-</g>
-<g class="u-node" id="un-mac" onclick="highlight('mac')">
-  <rect x="20" y="562" width="116" height="44" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="0.5"/>
-  <text class="th" x="78" y="584" text-anchor="middle" dominant-baseline="central" fill="#791F1F">macbolan</text>
-</g>
-<g class="u-node" id="un-steve" onclick="highlight('steve')">
-  <rect x="20" y="642" width="116" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
-  <text class="th" x="78" y="664" text-anchor="middle" dominant-baseline="central" fill="#444441">Steve Mac</text>
-</g>
-<g class="u-node" id="un-qti" onclick="highlight('qti')">
-  <rect x="20" y="722" width="116" height="44" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.5"/>
-  <text class="th" x="78" y="744" text-anchor="middle" dominant-baseline="central" fill="#0C447C">QTI</text>
-</g>
-<g class="u-node" id="un-indiv" onclick="highlight('indiv')">
-  <rect x="20" y="762" width="116" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
-  <text class="th" x="78" y="784" text-anchor="middle" dominant-baseline="central" fill="#444441">InDivGrowth</text>
-</g>
-<g class="u-node" id="un-mannie" onclick="highlight('mannie')">
-  <rect x="20" y="802" width="116" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
-  <text class="th" x="78" y="824" text-anchor="middle" dominant-baseline="central" fill="#444441">Mannie</text>
-</g>
-<g class="u-node" id="un-myke" onclick="highlight('myke')">
-  <rect x="20" y="842" width="116" height="44" rx="8" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/>
-  <text class="th" x="78" y="864" text-anchor="middle" dominant-baseline="central" fill="#444441">mykesc2020</text>
-</g>
+<!-- TICKER nodes: x=468, w=72, h=30, gap=2 -->
+<!-- NVDA=46 KO=78 MU=110 COST=142 SMH=174 MP=206 ASML=238 USAR=270 GLW=302 MA=334 TIPS=366 NBXG=398 BST=430 SPYI=462 AIO=494 NXG=526 QQI=558 (right col shift) -->
+<!-- Right col 2: CME=46 BSTZ=78 DRAM=110 VXUS=142 SPCX=174 DPG=206 ATO=238 NEE=270 GEV=302 AEP=334 JNJ=366 FAST=398 XLBI=430 XLB=462 PEP=494 XLSI=526 VZ=558 -->
 
-<!-- ── TICKER NODES (right column) ── -->
-<!-- Tech / semis -->
-<g class="t-node" id="tn-NVDA" onclick="highlight('NVDA')"><rect x="470" y="60" width="80" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="th" x="510" y="82" text-anchor="middle" dominant-baseline="central" fill="#633806">NVDA</text></g>
-<g class="t-node" id="tn-KO"   onclick="highlight('KO')"><rect x="470" y="80" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="102" text-anchor="middle" dominant-baseline="central" fill="#444441">KO</text></g>
-<g class="t-node" id="tn-MU"   onclick="highlight('MU')"><rect x="470" y="100" width="80" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="th" x="510" y="122" text-anchor="middle" dominant-baseline="central" fill="#633806">MU</text></g>
-<g class="t-node" id="tn-COST" onclick="highlight('COST')"><rect x="470" y="120" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="142" text-anchor="middle" dominant-baseline="central" fill="#444441">COST</text></g>
-<g class="t-node" id="tn-SMH"  onclick="highlight('SMH')"><rect x="470" y="140" width="80" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="th" x="510" y="162" text-anchor="middle" dominant-baseline="central" fill="#633806">SMH</text></g>
-<g class="t-node" id="tn-MP"   onclick="highlight('MP')"><rect x="470" y="160" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="182" text-anchor="middle" dominant-baseline="central" fill="#444441">MP</text></g>
-<g class="t-node" id="tn-ASML" onclick="highlight('ASML')"><rect x="470" y="180" width="80" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="th" x="510" y="202" text-anchor="middle" dominant-baseline="central" fill="#633806">ASML</text></g>
-<g class="t-node" id="tn-USAR" onclick="highlight('USAR')"><rect x="470" y="200" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="222" text-anchor="middle" dominant-baseline="central" fill="#444441">USAR</text></g>
-<g class="t-node" id="tn-GLW"  onclick="highlight('GLW')"><rect x="470" y="220" width="80" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="th" x="510" y="242" text-anchor="middle" dominant-baseline="central" fill="#633806">GLW</text></g>
-<g class="t-node" id="tn-MA"   onclick="highlight('MA')"><rect x="470" y="240" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="262" text-anchor="middle" dominant-baseline="central" fill="#444441">MA</text></g>
-<!-- Fixed income / CEF -->
-<g class="t-node" id="tn-TIPS" onclick="highlight('TIPS')"><rect x="470" y="260" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="th" x="510" y="282" text-anchor="middle" dominant-baseline="central" fill="#085041">TIPS</text></g>
-<g class="t-node" id="tn-NBXG" onclick="highlight('NBXG')"><rect x="470" y="280" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="th" x="510" y="302" text-anchor="middle" dominant-baseline="central" fill="#085041">NBXG</text></g>
-<g class="t-node" id="tn-BST"  onclick="highlight('BST')"><rect x="470" y="300" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="th" x="510" y="322" text-anchor="middle" dominant-baseline="central" fill="#085041">BST</text></g>
-<g class="t-node" id="tn-SPYI" onclick="highlight('SPYI')"><rect x="470" y="320" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="th" x="510" y="342" text-anchor="middle" dominant-baseline="central" fill="#085041">SPYI</text></g>
-<g class="t-node" id="tn-AIO"  onclick="highlight('AIO')"><rect x="470" y="340" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="th" x="510" y="362" text-anchor="middle" dominant-baseline="central" fill="#085041">AIO</text></g>
-<g class="t-node" id="tn-NXG"  onclick="highlight('NXG')"><rect x="470" y="380" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="th" x="510" y="402" text-anchor="middle" dominant-baseline="central" fill="#085041">NXG</text></g>
-<g class="t-node" id="tn-QQI"  onclick="highlight('QQI')"><rect x="470" y="420" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="th" x="510" y="442" text-anchor="middle" dominant-baseline="central" fill="#085041">QQI</text></g>
-<g class="t-node" id="tn-CME"  onclick="highlight('CME')"><rect x="470" y="440" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="462" text-anchor="middle" dominant-baseline="central" fill="#444441">CME</text></g>
-<g class="t-node" id="tn-BSTZ" onclick="highlight('BSTZ')"><rect x="470" y="460" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="th" x="510" y="482" text-anchor="middle" dominant-baseline="central" fill="#085041">BSTZ</text></g>
-<g class="t-node" id="tn-DRAM" onclick="highlight('DRAM')"><rect x="470" y="500" width="80" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="th" x="510" y="522" text-anchor="middle" dominant-baseline="central" fill="#633806">DRAM</text></g>
-<g class="t-node" id="tn-VXUS" onclick="highlight('VXUS')"><rect x="470" y="540" width="80" height="44" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.5"/><text class="th" x="510" y="562" text-anchor="middle" dominant-baseline="central" fill="#0C447C">VXUS</text></g>
-<g class="t-node" id="tn-SPXC" onclick="highlight('SPXC')"><rect x="470" y="580" width="80" height="44" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="0.5"/><text class="th" x="510" y="602" text-anchor="middle" dominant-baseline="central" fill="#791F1F">SPXC</text></g>
-<g class="t-node" id="tn-DPG"  onclick="highlight('DPG')"><rect x="470" y="600" width="80" height="44" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="th" x="510" y="622" text-anchor="middle" dominant-baseline="central" fill="#085041">DPG</text></g>
-<!-- Utilities -->
-<g class="t-node" id="tn-ATO"  onclick="highlight('ATO')"><rect x="470" y="620" width="80" height="44" rx="8" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/><text class="th" x="510" y="642" text-anchor="middle" dominant-baseline="central" fill="#27500A">ATO</text></g>
-<g class="t-node" id="tn-NEE"  onclick="highlight('NEE')"><rect x="470" y="660" width="80" height="44" rx="8" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="th" x="510" y="682" text-anchor="middle" dominant-baseline="central" fill="#27500A">NEE</text></g>
-<g class="t-node" id="tn-AEP"  onclick="highlight('AEP')"><rect x="470" y="720" width="80" height="44" rx="8" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="th" x="510" y="742" text-anchor="middle" dominant-baseline="central" fill="#27500A">AEP</text></g>
-<g class="t-node" id="tn-GEV"  onclick="highlight('GEV')"><rect x="470" y="700" width="80" height="44" rx="8" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="th" x="510" y="722" text-anchor="middle" dominant-baseline="central" fill="#27500A">GEV</text></g>
-<g class="t-node" id="tn-JNJ"  onclick="highlight('JNJ')"><rect x="470" y="740" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="762" text-anchor="middle" dominant-baseline="central" fill="#444441">JNJ</text></g>
-<g class="t-node" id="tn-FAST" onclick="highlight('FAST')"><rect x="470" y="780" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="802" text-anchor="middle" dominant-baseline="central" fill="#444441">FAST</text></g>
-<!-- Materials / covered calls -->
-<g class="t-node" id="tn-XLBI" onclick="highlight('XLBI')"><rect x="470" y="800" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="822" text-anchor="middle" dominant-baseline="central" fill="#444441">XLBI</text></g>
-<g class="t-node" id="tn-XLB"  onclick="highlight('XLB')"><rect x="470" y="820" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="842" text-anchor="middle" dominant-baseline="central" fill="#444441">XLB</text></g>
-<g class="t-node" id="tn-SPCX" onclick="highlight('SPCX')"><rect x="470" y="580" width="80" height="44" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/><text class="th" x="510" y="602" text-anchor="middle" dominant-baseline="central" fill="#633806">SPCX</text></g>
-<g class="t-node" id="tn-PEP"  onclick="highlight('PEP')"><rect x="470" y="860" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="882" text-anchor="middle" dominant-baseline="central" fill="#444441">PEP</text></g>
-<g class="t-node" id="tn-XLSI" onclick="highlight('XLSI')"><rect x="470" y="840" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="862" text-anchor="middle" dominant-baseline="central" fill="#444441">XLSI</text></g>
-<g class="t-node" id="tn-VZ"   onclick="highlight('VZ')"><rect x="470" y="880" width="80" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="th" x="510" y="902" text-anchor="middle" dominant-baseline="central" fill="#444441">VZ</text></g>
+<!-- ── EDGES ── -->
+<!-- chowder -->
+<line class="edge" id="e-chowder-NVDA"  x1="114" y1="52"  x2="468" y2="46"  stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-MU"    x1="114" y1="52"  x2="468" y2="110" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-SMH"   x1="114" y1="52"  x2="468" y2="174" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-ASML"  x1="114" y1="52"  x2="468" y2="238" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-GLW"   x1="114" y1="52"  x2="468" y2="302" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-BST"   x1="114" y1="52"  x2="468" y2="430" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-AIO"   x1="114" y1="52"  x2="468" y2="494" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-NXG"   x1="114" y1="52"  x2="468" y2="526" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-QQI"   x1="114" y1="52"  x2="468" y2="558" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-BSTZ"  x1="114" y1="52"  x2="468" y2="302" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
+<line class="edge" id="e-chowder-DRAM"  x1="114" y1="52"  x2="468" y2="110" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
+<line class="edge" id="e-chowder-SPXC"  x1="114" y1="52"  x2="468" y2="174" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
+<line class="edge" id="e-chowder-ATO"   x1="114" y1="52"  x2="468" y2="238" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-NEE"   x1="114" y1="52"  x2="468" y2="270" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-GEV"   x1="114" y1="52"  x2="468" y2="302" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
+<line class="edge" id="e-chowder-JNJ"   x1="114" y1="52"  x2="468" y2="366" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-FAST"  x1="114" y1="52"  x2="468" y2="398" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-PEP"   x1="114" y1="52"  x2="468" y2="494" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
+<line class="edge" id="e-chowder-VZ"    x1="114" y1="52"  x2="468" y2="558" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
+<line class="edge" id="e-chowder-XLBI"  x1="114" y1="52"  x2="468" y2="430" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
+<line class="edge" id="e-chowder-XLB"   x1="114" y1="52"  x2="468" y2="462" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-chowder-DPG"   x1="114" y1="52"  x2="468" y2="206" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<!-- cemanuel -->
+<line class="edge" id="e-cemanuel-NVDA"  x1="114" y1="86"  x2="468" y2="46"  stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-cemanuel-ATO"   x1="114" y1="86"  x2="468" y2="238" stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-cemanuel-NEE"   x1="114" y1="86"  x2="468" y2="270" stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-cemanuel-SPCX"  x1="114" y1="86"  x2="468" y2="174" stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
+<!-- SeeksQuality -->
+<line class="edge" id="e-seeks-ATO"   x1="114" y1="120" x2="468" y2="238" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-seeks-NEE"   x1="114" y1="120" x2="468" y2="270" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-seeks-AEP"   x1="114" y1="120" x2="468" y2="334" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-seeks-TIPS"  x1="114" y1="120" x2="468" y2="366" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
+<!-- weathersystems -->
+<line class="edge" id="e-weather-SPCX" x1="114" y1="154" x2="468" y2="174" stroke="#7F77DD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-weather-MP"   x1="114" y1="154" x2="468" y2="206" stroke="#7F77DD" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-weather-USAR" x1="114" y1="154" x2="468" y2="270" stroke="#7F77DD" stroke-width="0.8" opacity=".35"/>
+<!-- jritz0 -->
+<line class="edge" id="e-jritz-NBXG"  x1="114" y1="188" x2="468" y2="398" stroke="#BA7517" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-jritz-BST"   x1="114" y1="188" x2="468" y2="430" stroke="#BA7517" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-jritz-BSTZ"  x1="114" y1="188" x2="468" y2="462" stroke="#BA7517" stroke-width="0.8" opacity=".35"/>
+<!-- Max2.0 -->
+<line class="edge" id="e-max-BST"   x1="114" y1="222" x2="468" y2="430" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-max-BSTZ"  x1="114" y1="222" x2="468" y2="462" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- macbolan -->
+<line class="edge" id="e-mac-BST"   x1="114" y1="256" x2="468" y2="430" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-mac-BSTZ"  x1="114" y1="256" x2="468" y2="462" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-mac-COST"  x1="114" y1="256" x2="468" y2="142" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-mac-MA"    x1="114" y1="256" x2="468" y2="334" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
+<!-- Steve Mac -->
+<line class="edge" id="e-steve-SPYI" x1="114" y1="290" x2="468" y2="462" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-steve-CME"  x1="114" y1="290" x2="468" y2="46"  stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- QTI -->
+<line class="edge" id="e-qti-VXUS"   x1="114" y1="324" x2="468" y2="142" stroke="#0C447C" stroke-width="1.2" opacity=".55"/>
+<!-- InDivGrowth -->
+<line class="edge" id="e-indiv-ATO"  x1="114" y1="358" x2="468" y2="238" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- Mannie -->
+<line class="edge" id="e-mannie-XLBI" x1="114" y1="392" x2="468" y2="430" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<line class="edge" id="e-mannie-XLSI" x1="114" y1="392" x2="468" y2="526" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- mykesc2020 -->
+<line class="edge" id="e-myke-KO"    x1="114" y1="426" x2="468" y2="78"  stroke="#888780" stroke-width="0.8" opacity=".35"/>
+
+<!-- ── USER NODES (left, h=30 w=104) ── -->
+<g class="u-node" id="un-chowder"  onclick="hl('chowder')"> <rect x="10" y="37"  width="104" height="30" rx="6" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/><text class="ts" x="62" y="52"  text-anchor="middle" dominant-baseline="central" fill="#0C447C" font-weight="500">chowder</text></g>
+<g class="u-node" id="un-cemanuel" onclick="hl('cemanuel')"><rect x="10" y="71"  width="104" height="30" rx="6" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="62" y="86"  text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">cemanuel</text></g>
+<g class="u-node" id="un-seeks"    onclick="hl('seeks')">   <rect x="10" y="105" width="104" height="30" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/><text class="ts" x="62" y="120" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-weight="500">SeeksQuality</text></g>
+<g class="u-node" id="un-weather"  onclick="hl('weather')"> <rect x="10" y="139" width="104" height="30" rx="6" fill="#D4B8F0" stroke="#5B2D8E" stroke-width="0.5"/><text class="ts" x="62" y="154" text-anchor="middle" dominant-baseline="central" fill="#3A1A6E" font-weight="500">weathersys</text></g>
+<g class="u-node" id="un-jritz"    onclick="hl('jritz')">   <rect x="10" y="173" width="104" height="30" rx="6" fill="#FAC775" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="62" y="188" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">jritz0</text></g>
+<g class="u-node" id="un-max"      onclick="hl('max')">     <rect x="10" y="207" width="104" height="30" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="62" y="222" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">Max2.0</text></g>
+<g class="u-node" id="un-mac"      onclick="hl('mac')">     <rect x="10" y="241" width="104" height="30" rx="6" fill="#F7C1C1" stroke="#A32D2D" stroke-width="0.5"/><text class="ts" x="62" y="256" text-anchor="middle" dominant-baseline="central" fill="#791F1F" font-weight="500">macbolan</text></g>
+<g class="u-node" id="un-steve"    onclick="hl('steve')">   <rect x="10" y="275" width="104" height="30" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="62" y="290" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">Steve Mac</text></g>
+<g class="u-node" id="un-qti"      onclick="hl('qti')">     <rect x="10" y="309" width="104" height="30" rx="6" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.5"/><text class="ts" x="62" y="324" text-anchor="middle" dominant-baseline="central" fill="#0C447C" font-weight="500">QTI</text></g>
+<g class="u-node" id="un-indiv"    onclick="hl('indiv')">   <rect x="10" y="343" width="104" height="30" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="62" y="358" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">InDivGrowth</text></g>
+<g class="u-node" id="un-mannie"   onclick="hl('mannie')">  <rect x="10" y="377" width="104" height="30" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="62" y="392" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">Mannie</text></g>
+<g class="u-node" id="un-myke"     onclick="hl('myke')">    <rect x="10" y="411" width="104" height="30" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="62" y="426" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">mykesc2020</text></g>
+
+<!-- ── TICKER NODES left col (x=468, w=72, h=24, col1 y-centres) ── -->
+<!-- col1: NVDA=46 KO=78 MU=110 COST=142 SMH=174 MP=206 ASML=238 USAR=270 GLW=302 MA=334 TIPS=366 NBXG=398 BST=430 SPYI=462 AIO=494 NXG=526 QQI=558 -->
+<g class="t-node" id="tn-NVDA" onclick="hl('NVDA')"><rect x="468" y="34"  width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="46"  text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">NVDA</text></g>
+<g class="t-node" id="tn-KO"   onclick="hl('KO')"  ><rect x="468" y="66"  width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="78"  text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">KO</text></g>
+<g class="t-node" id="tn-MU"   onclick="hl('MU')"  ><rect x="468" y="98"  width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="110" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">MU</text></g>
+<g class="t-node" id="tn-COST" onclick="hl('COST')"><rect x="468" y="130" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="142" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">COST</text></g>
+<g class="t-node" id="tn-SMH"  onclick="hl('SMH')" ><rect x="468" y="162" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="174" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">SMH</text></g>
+<g class="t-node" id="tn-MP"   onclick="hl('MP')"  ><rect x="468" y="194" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="206" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">MP</text></g>
+<g class="t-node" id="tn-ASML" onclick="hl('ASML')"><rect x="468" y="226" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="238" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">ASML</text></g>
+<g class="t-node" id="tn-USAR" onclick="hl('USAR')"><rect x="468" y="258" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="270" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">USAR</text></g>
+<g class="t-node" id="tn-GLW"  onclick="hl('GLW')" ><rect x="468" y="290" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="302" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">GLW</text></g>
+<g class="t-node" id="tn-MA"   onclick="hl('MA')"  ><rect x="468" y="322" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="334" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">MA</text></g>
+<g class="t-node" id="tn-TIPS" onclick="hl('TIPS')"><rect x="468" y="354" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="366" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">TIPS</text></g>
+<g class="t-node" id="tn-NBXG" onclick="hl('NBXG')"><rect x="468" y="386" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="398" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">NBXG</text></g>
+<g class="t-node" id="tn-BST"  onclick="hl('BST')" ><rect x="468" y="418" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="ts" x="504" y="430" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">BST</text></g>
+<g class="t-node" id="tn-SPYI" onclick="hl('SPYI')"><rect x="468" y="450" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="462" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">SPYI</text></g>
+<g class="t-node" id="tn-AIO"  onclick="hl('AIO')" ><rect x="468" y="482" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="ts" x="504" y="494" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">AIO</text></g>
+<g class="t-node" id="tn-NXG"  onclick="hl('NXG')" ><rect x="468" y="514" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="526" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">NXG</text></g>
+<g class="t-node" id="tn-QQI"  onclick="hl('QQI')" ><rect x="468" y="546" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="558" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">QQI</text></g>
+<g class="t-node" id="tn-CME"  onclick="hl('CME')" ><rect x="468" y="34"  width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="46"  text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">CME</text></g>
+<g class="t-node" id="tn-BSTZ" onclick="hl('BSTZ')"><rect x="468" y="450" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="462" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">BSTZ</text></g>
+<g class="t-node" id="tn-DRAM" onclick="hl('DRAM')"><rect x="468" y="98"  width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="110" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">DRAM</text></g>
+<g class="t-node" id="tn-VXUS" onclick="hl('VXUS')"><rect x="468" y="130" width="72" height="24" rx="5" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.5"/><text class="ts" x="504" y="142" text-anchor="middle" dominant-baseline="central" fill="#0C447C" font-weight="500">VXUS</text></g>
+<g class="t-node" id="tn-SPCX" onclick="hl('SPCX')"><rect x="468" y="162" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/><text class="ts" x="504" y="174" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">SPCX</text></g>
+<g class="t-node" id="tn-DPG"  onclick="hl('DPG')" ><rect x="468" y="194" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="206" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">DPG</text></g>
+<g class="t-node" id="tn-ATO"  onclick="hl('ATO')" ><rect x="468" y="226" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/><text class="ts" x="504" y="238" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">ATO</text></g>
+<g class="t-node" id="tn-NEE"  onclick="hl('NEE')" ><rect x="468" y="258" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="ts" x="504" y="270" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">NEE</text></g>
+<g class="t-node" id="tn-GEV"  onclick="hl('GEV')" ><rect x="468" y="290" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="ts" x="504" y="302" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">GEV</text></g>
+<g class="t-node" id="tn-AEP"  onclick="hl('AEP')" ><rect x="468" y="322" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="ts" x="504" y="334" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">AEP</text></g>
+<g class="t-node" id="tn-JNJ"  onclick="hl('JNJ')" ><rect x="468" y="354" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="366" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">JNJ</text></g>
+<g class="t-node" id="tn-FAST" onclick="hl('FAST')"><rect x="468" y="386" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="398" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">FAST</text></g>
+<g class="t-node" id="tn-XLBI" onclick="hl('XLBI')"><rect x="468" y="418" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="430" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">XLBI</text></g>
+<g class="t-node" id="tn-XLB"  onclick="hl('XLB')" ><rect x="468" y="450" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="462" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">XLB</text></g>
+<g class="t-node" id="tn-PEP"  onclick="hl('PEP')" ><rect x="468" y="482" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="494" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">PEP</text></g>
+<g class="t-node" id="tn-XLSI" onclick="hl('XLSI')"><rect x="468" y="514" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="526" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">XLSI</text></g>
+<g class="t-node" id="tn-VZ"   onclick="hl('VZ')"  ><rect x="468" y="546" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="558" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">VZ</text></g>
 
 <!-- Legend -->
-<rect x="170" y="18" width="10" height="10" rx="2" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
-<text class="ts" x="186" y="27" fill="#854F0B">Tech / semis</text>
-<rect x="280" y="18" width="10" height="10" rx="2" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
-<text class="ts" x="296" y="27" fill="#0F6E56">CEF / income</text>
-<rect x="390" y="18" width="10" height="10" rx="2" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/>
-<text class="ts" x="406" y="27" fill="#3B6D11">Utility / infra</text>
-<rect x="500" y="18" width="10" height="10" rx="2" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
-<text class="ts" x="516" y="27" fill="#5F5E5A">Other</text>
+<rect x="130" y="606" width="9" height="9" rx="2" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text class="ts" x="144" y="614" fill="#854F0B">Tech/semis</text>
+<rect x="220" y="606" width="9" height="9" rx="2" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="ts" x="234" y="614" fill="#0F6E56">CEF/income</text>
+<rect x="310" y="606" width="9" height="9" rx="2" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/>
+<text class="ts" x="324" y="614" fill="#3B6D11">Utility/infra</text>
+<rect x="400" y="606" width="9" height="9" rx="2" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="414" y="614" fill="#5F5E5A">Other</text>
 
 </svg>
-<p style="font-size:12px;color:var(--color-text-secondary);margin:4px 0 0;text-align:center">Click any user or ticker to highlight their connections · click again to reset</p>
+<p style="font-size:11px;color:var(--color-text-secondary);text-align:center;margin:2px 0 0">Click any user or ticker to highlight connections · click again to reset</p>
 
 <script>
 const edges = {
-  chowder: ['NVDA','MU','SMH','ASML','GLW','BST','AIO','NXG','QQI','BSTZ','DRAM','SPXC','ATO','NEE','GEV','XLB','JNJ','FAST','PEP','XLBI','DPG','VZ'],
+  chowder:  ['NVDA','MU','SMH','ASML','GLW','BST','AIO','NXG','QQI','BSTZ','DRAM','SPXC','ATO','NEE','GEV','JNJ','FAST','PEP','VZ','XLBI','XLB','DPG'],
   cemanuel: ['NVDA','ATO','NEE','SPCX'],
   seeks:    ['ATO','NEE','AEP','TIPS'],
   weather:  ['SPCX','MP','USAR'],
@@ -209,58 +175,37 @@ const edges = {
 
 let active = null;
 
-function highlight(id) {
+function hl(id) {
   const allEdges = document.querySelectorAll('.edge');
   const allUsers = document.querySelectorAll('.u-node');
   const allTickers = document.querySelectorAll('.t-node');
-
   if (active === id) {
     active = null;
-    allEdges.forEach(e => { e.classList.remove('dim','hi'); });
+    allEdges.forEach(e => e.classList.remove('dim','hi'));
     allUsers.forEach(n => n.classList.remove('dim'));
     allTickers.forEach(n => n.classList.remove('dim'));
     return;
   }
   active = id;
-
   const isUser = edges[id] !== undefined;
-  let connectedUsers = new Set();
-  let connectedTickers = new Set();
-
+  const connectedUsers = new Set();
+  const connectedTickers = new Set();
   if (isUser) {
-    connectedTickers = new Set(edges[id]);
     connectedUsers.add(id);
+    edges[id].forEach(t => connectedTickers.add(t));
   } else {
     for (const [u, tickers] of Object.entries(edges)) {
-      if (tickers.includes(id)) {
-        connectedUsers.add(u);
-        connectedTickers.add(id);
-      }
+      if (tickers.includes(id)) { connectedUsers.add(u); connectedTickers.add(id); }
     }
   }
-
   allEdges.forEach(e => {
-    const eid = e.id;
-    let matched = false;
-    if (isUser) {
-      matched = eid.startsWith('e-' + id + '-') && connectedTickers.has(eid.split('-').slice(2).join('-'));
-    } else {
-      for (const u of connectedUsers) {
-        if (eid === 'e-' + u + '-' + id) { matched = true; break; }
-      }
-    }
+    const parts = e.id.split('-');
+    const u = parts[1]; const t = parts.slice(2).join('-');
+    const matched = connectedUsers.has(u) && connectedTickers.has(t);
     e.classList.toggle('dim', !matched);
     e.classList.toggle('hi', matched);
   });
-
-  allUsers.forEach(n => {
-    const uid = n.id.replace('un-', '');
-    n.classList.toggle('dim', !connectedUsers.has(uid));
-  });
-
-  allTickers.forEach(n => {
-    const tid = n.id.replace('tn-', '');
-    n.classList.toggle('dim', !connectedTickers.has(tid));
-  });
+  allUsers.forEach(n => n.classList.toggle('dim', !connectedUsers.has(n.id.replace('un-',''))));
+  allTickers.forEach(n => n.classList.toggle('dim', !connectedTickers.has(n.id.replace('tn-',''))));
 }
 </script>
