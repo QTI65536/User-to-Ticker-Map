@@ -1,56 +1,37 @@
 
-<h2 class="sr-only">Interactive user-to-ticker map with embedded summaries. Click any node to highlight connections and read a summary below the map. Posts #31492–31566.</h2>
+<h2 class="sr-only">Compact interactive user-to-ticker relationship map from SI thread posts #31492–31566. Click any node to highlight connections.</h2>
 <style>
-svg { display: block; width: 100%; max-width: 580px; margin: 0 auto; }
-.u-node, .t-node { cursor: pointer; }
-.u-node rect, .t-node rect { transition: opacity .15s; }
-.u-node:hover rect, .t-node:hover rect { opacity: .82; }
+svg { display: block; width: 100%; max-width: 680px; margin: 0 auto; }
+.u-node { cursor: pointer; }
+.u-node rect { transition: opacity .15s; }
+.u-node:hover rect { opacity: .82; }
+.t-node { cursor: pointer; }
+.t-node rect { transition: opacity .15s; }
+.t-node:hover rect { opacity: .82; }
 .edge { transition: opacity .2s, stroke-width .2s; }
-.edge.dim { opacity: .05; }
+.edge.dim { opacity: .06; }
 .edge.hi  { stroke-width: 2px; }
-.u-node.dim rect, .u-node.dim text { opacity: .1; }
-.t-node.dim rect, .t-node.dim text { opacity: .1; }
-#detail-pane {
-  display: none;
-  margin-top: 10px;
-  background: var(--color-background-secondary);
-  border: 0.5px solid var(--color-border-secondary);
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  animation: fadeIn .15s ease;
-}
-#detail-pane.visible { display: block; }
-@keyframes fadeIn { from { opacity:0; transform: translateY(4px); } to { opacity:1; transform:none; } }
-#dp-header {
-  display: flex; align-items: flex-start; justify-content: space-between;
-  padding: 10px 14px 8px; border-bottom: 0.5px solid var(--color-border-tertiary);
-  gap: 8px;
-}
-#dp-badge {
-  font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px;
-  letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; display: inline-block; margin-bottom: 3px;
-}
-#dp-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); line-height: 1.3; }
-#dp-close {
-  background: none; border: 0.5px solid var(--color-border-secondary);
-  border-radius: 5px; padding: 2px 10px; font-size: 11px;
-  color: var(--color-text-secondary); cursor: pointer; flex-shrink: 0; margin-top: 2px;
-}
-#dp-close:hover { background: var(--color-background-tertiary); }
-#dp-body { padding: 10px 14px 14px; font-size: 12px; line-height: 1.7; color: var(--color-text-secondary); }
-#dp-body strong { font-weight: 500; color: var(--color-text-primary); }
+.u-node.dim rect, .u-node.dim text { opacity: .12; }
+.t-node.dim rect, .t-node.dim text { opacity: .12; }
 </style>
-
 <svg viewBox="0 0 580 640" role="img">
-<title>User to ticker map</title>
-<desc>Network diagram. Click any node to highlight connections and see a summary below.</desc>
+<title>User to ticker map — compact</title>
+<desc>Network diagram connecting SI board participants to tickers discussed in posts 31492–31566. Click to highlight.</desc>
 <defs>
   <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </marker>
 </defs>
 
-<!-- EDGES -->
+<!-- USER nodes: x=10, w=104, h=30, gap=4 -->
+<!-- ROW y centres: chowder=52, cemanuel=86, seeks=120, weather=154, jritz=188, max=222, mac=256, steve=290, qti=324, indiv=358, mannie=392, myke=426 -->
+
+<!-- TICKER nodes: x=468, w=72, h=30, gap=2 -->
+<!-- NVDA=46 KO=78 MU=110 COST=142 SMH=174 MP=206 ASML=238 USAR=270 GLW=302 MA=334 TIPS=366 NBXG=398 BST=430 SPYI=462 AIO=494 NXG=526 QQI=558 (right col shift) -->
+<!-- Right col 2: CME=46 BSTZ=78 DRAM=110 VXUS=142 SPCX=174 DPG=206 ATO=238 NEE=270 GEV=302 AEP=334 JNJ=366 FAST=398 XLBI=430 XLB=462 PEP=494 XLSI=526 VZ=558 -->
+
+<!-- ── EDGES ── -->
+<!-- chowder -->
 <line class="edge" id="e-chowder-NVDA"  x1="114" y1="52"  x2="468" y2="46"  stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-chowder-MU"    x1="114" y1="52"  x2="468" y2="110" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-chowder-SMH"   x1="114" y1="52"  x2="468" y2="174" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
@@ -60,7 +41,7 @@ svg { display: block; width: 100%; max-width: 580px; margin: 0 auto; }
 <line class="edge" id="e-chowder-AIO"   x1="114" y1="52"  x2="468" y2="494" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-chowder-NXG"   x1="114" y1="52"  x2="468" y2="526" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-chowder-QQI"   x1="114" y1="52"  x2="468" y2="558" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
-<line class="edge" id="e-chowder-BSTZ"  x1="114" y1="52"  x2="468" y2="462" stroke="#378ADD" stroke-width="0.8" opacity=".25"/>
+<line class="edge" id="e-chowder-BSTZ"  x1="114" y1="52"  x2="468" y2="302" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
 <line class="edge" id="e-chowder-DRAM"  x1="114" y1="52"  x2="468" y2="110" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
 <line class="edge" id="e-chowder-SPXC"  x1="114" y1="52"  x2="468" y2="174" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
 <line class="edge" id="e-chowder-ATO"   x1="114" y1="52"  x2="468" y2="238" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
@@ -73,35 +54,46 @@ svg { display: block; width: 100%; max-width: 580px; margin: 0 auto; }
 <line class="edge" id="e-chowder-XLBI"  x1="114" y1="52"  x2="468" y2="430" stroke="#378ADD" stroke-width="0.8" opacity=".2"/>
 <line class="edge" id="e-chowder-XLB"   x1="114" y1="52"  x2="468" y2="462" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-chowder-DPG"   x1="114" y1="52"  x2="468" y2="206" stroke="#378ADD" stroke-width="0.8" opacity=".35"/>
+<!-- cemanuel -->
 <line class="edge" id="e-cemanuel-NVDA"  x1="114" y1="86"  x2="468" y2="46"  stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-cemanuel-ATO"   x1="114" y1="86"  x2="468" y2="238" stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-cemanuel-NEE"   x1="114" y1="86"  x2="468" y2="270" stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-cemanuel-SPCX"  x1="114" y1="86"  x2="468" y2="174" stroke="#1D9E75" stroke-width="0.8" opacity=".35"/>
+<!-- SeeksQuality -->
 <line class="edge" id="e-seeks-ATO"   x1="114" y1="120" x2="468" y2="238" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-seeks-NEE"   x1="114" y1="120" x2="468" y2="270" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-seeks-AEP"   x1="114" y1="120" x2="468" y2="334" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-seeks-TIPS"  x1="114" y1="120" x2="468" y2="366" stroke="#D85A30" stroke-width="0.8" opacity=".35"/>
+<!-- weathersystems -->
 <line class="edge" id="e-weather-SPCX" x1="114" y1="154" x2="468" y2="174" stroke="#7F77DD" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-weather-MP"   x1="114" y1="154" x2="468" y2="206" stroke="#7F77DD" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-weather-USAR" x1="114" y1="154" x2="468" y2="270" stroke="#7F77DD" stroke-width="0.8" opacity=".35"/>
+<!-- jritz0 -->
 <line class="edge" id="e-jritz-NBXG"  x1="114" y1="188" x2="468" y2="398" stroke="#BA7517" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-jritz-BST"   x1="114" y1="188" x2="468" y2="430" stroke="#BA7517" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-jritz-BSTZ"  x1="114" y1="188" x2="468" y2="462" stroke="#BA7517" stroke-width="0.8" opacity=".35"/>
+<!-- Max2.0 -->
 <line class="edge" id="e-max-BST"   x1="114" y1="222" x2="468" y2="430" stroke="#888780" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-max-BSTZ"  x1="114" y1="222" x2="468" y2="462" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- macbolan -->
 <line class="edge" id="e-mac-BST"   x1="114" y1="256" x2="468" y2="430" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-mac-BSTZ"  x1="114" y1="256" x2="468" y2="462" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-mac-COST"  x1="114" y1="256" x2="468" y2="142" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-mac-MA"    x1="114" y1="256" x2="468" y2="334" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
+<!-- Steve Mac -->
 <line class="edge" id="e-steve-SPYI" x1="114" y1="290" x2="468" y2="462" stroke="#888780" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-steve-CME"  x1="114" y1="290" x2="468" y2="46"  stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- QTI -->
 <line class="edge" id="e-qti-VXUS"   x1="114" y1="324" x2="468" y2="142" stroke="#0C447C" stroke-width="1.2" opacity=".55"/>
+<!-- InDivGrowth -->
 <line class="edge" id="e-indiv-ATO"  x1="114" y1="358" x2="468" y2="238" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- Mannie -->
 <line class="edge" id="e-mannie-XLBI" x1="114" y1="392" x2="468" y2="430" stroke="#888780" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-mannie-XLSI" x1="114" y1="392" x2="468" y2="526" stroke="#888780" stroke-width="0.8" opacity=".35"/>
+<!-- mykesc2020 -->
 <line class="edge" id="e-myke-KO"    x1="114" y1="426" x2="468" y2="78"  stroke="#888780" stroke-width="0.8" opacity=".35"/>
 
-<!-- USER NODES -->
+<!-- ── USER NODES (left, h=30 w=104) ── -->
 <g class="u-node" id="un-chowder"  onclick="hl('chowder')"> <rect x="10" y="37"  width="104" height="30" rx="6" fill="#B5D4F4" stroke="#185FA5" stroke-width="0.5"/><text class="ts" x="62" y="52"  text-anchor="middle" dominant-baseline="central" fill="#0C447C" font-weight="500">chowder</text></g>
 <g class="u-node" id="un-cemanuel" onclick="hl('cemanuel')"><rect x="10" y="71"  width="104" height="30" rx="6" fill="#9FE1CB" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="62" y="86"  text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">cemanuel</text></g>
 <g class="u-node" id="un-seeks"    onclick="hl('seeks')">   <rect x="10" y="105" width="104" height="30" rx="6" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/><text class="ts" x="62" y="120" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-weight="500">SeeksQuality</text></g>
@@ -115,49 +107,55 @@ svg { display: block; width: 100%; max-width: 580px; margin: 0 auto; }
 <g class="u-node" id="un-mannie"   onclick="hl('mannie')">  <rect x="10" y="377" width="104" height="30" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="62" y="392" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">Mannie</text></g>
 <g class="u-node" id="un-myke"     onclick="hl('myke')">    <rect x="10" y="411" width="104" height="30" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="62" y="426" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">mykesc2020</text></g>
 
-<!-- TICKER NODES -->
+<!-- ── TICKER NODES left col (x=468, w=72, h=24, col1 y-centres) ── -->
+<!-- col1: NVDA=46 KO=78 MU=110 COST=142 SMH=174 MP=206 ASML=238 USAR=270 GLW=302 MA=334 TIPS=366 NBXG=398 BST=430 SPYI=462 AIO=494 NXG=526 QQI=558 -->
 <g class="t-node" id="tn-NVDA" onclick="hl('NVDA')"><rect x="468" y="34"  width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="46"  text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">NVDA</text></g>
 <g class="t-node" id="tn-KO"   onclick="hl('KO')"  ><rect x="468" y="66"  width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="78"  text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">KO</text></g>
-<g class="t-node" id="tn-MU"   onclick="hl('MU')"  ><rect x="468" y="98"  width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="110" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">MU / DRAM</text></g>
-<g class="t-node" id="tn-COST" onclick="hl('COST')"><rect x="468" y="130" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="142" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">COST/VXUS</text></g>
-<g class="t-node" id="tn-SMH"  onclick="hl('SMH')" ><rect x="468" y="162" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="174" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">SMH/SPCX</text></g>
-<g class="t-node" id="tn-MP"   onclick="hl('MP')"  ><rect x="468" y="194" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="206" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">MP / DPG</text></g>
-<g class="t-node" id="tn-ASML" onclick="hl('ASML')"><rect x="468" y="226" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="238" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">ASML/ATO</text></g>
-<g class="t-node" id="tn-USAR" onclick="hl('USAR')"><rect x="468" y="258" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="ts" x="504" y="270" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">USAR/NEE</text></g>
-<g class="t-node" id="tn-GLW"  onclick="hl('GLW')" ><rect x="468" y="290" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="302" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">GLW / GEV</text></g>
-<g class="t-node" id="tn-MA"   onclick="hl('MA')"  ><rect x="468" y="322" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="334" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">MA / AEP</text></g>
-<g class="t-node" id="tn-TIPS" onclick="hl('TIPS')"><rect x="468" y="354" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="366" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">TIPS / JNJ</text></g>
-<g class="t-node" id="tn-NBXG" onclick="hl('NBXG')"><rect x="468" y="386" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="398" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">NBXG/FAST</text></g>
-<g class="t-node" id="tn-BST"  onclick="hl('BST')" ><rect x="468" y="418" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="ts" x="504" y="430" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">BST/XLBI</text></g>
-<g class="t-node" id="tn-SPYI" onclick="hl('SPYI')"><rect x="468" y="450" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="462" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">SPYI/BSTZ</text></g>
-<g class="t-node" id="tn-AIO"  onclick="hl('AIO')" ><rect x="468" y="482" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="ts" x="504" y="494" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">AIO / PEP</text></g>
-<g class="t-node" id="tn-NXG"  onclick="hl('NXG')" ><rect x="468" y="514" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="526" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">NXG/XLSI</text></g>
-<g class="t-node" id="tn-QQI"  onclick="hl('QQI')" ><rect x="468" y="546" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="558" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">QQI / VZ</text></g>
+<g class="t-node" id="tn-MU"   onclick="hl('MU')"  ><rect x="468" y="98"  width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="110" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">MU</text></g>
+<g class="t-node" id="tn-COST" onclick="hl('COST')"><rect x="468" y="130" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="142" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">COST</text></g>
+<g class="t-node" id="tn-SMH"  onclick="hl('SMH')" ><rect x="468" y="162" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="174" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">SMH</text></g>
+<g class="t-node" id="tn-MP"   onclick="hl('MP')"  ><rect x="468" y="194" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="206" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">MP</text></g>
+<g class="t-node" id="tn-ASML" onclick="hl('ASML')"><rect x="468" y="226" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="238" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">ASML</text></g>
+<g class="t-node" id="tn-USAR" onclick="hl('USAR')"><rect x="468" y="258" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="270" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">USAR</text></g>
+<g class="t-node" id="tn-GLW"  onclick="hl('GLW')" ><rect x="468" y="290" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="302" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">GLW</text></g>
+<g class="t-node" id="tn-MA"   onclick="hl('MA')"  ><rect x="468" y="322" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="334" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">MA</text></g>
+<g class="t-node" id="tn-TIPS" onclick="hl('TIPS')"><rect x="468" y="354" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="366" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">TIPS</text></g>
+<g class="t-node" id="tn-NBXG" onclick="hl('NBXG')"><rect x="468" y="386" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="398" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">NBXG</text></g>
+<g class="t-node" id="tn-BST"  onclick="hl('BST')" ><rect x="468" y="418" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="ts" x="504" y="430" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">BST</text></g>
+<g class="t-node" id="tn-SPYI" onclick="hl('SPYI')"><rect x="468" y="450" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="462" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">SPYI</text></g>
+<g class="t-node" id="tn-AIO"  onclick="hl('AIO')" ><rect x="468" y="482" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/><text class="ts" x="504" y="494" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">AIO</text></g>
+<g class="t-node" id="tn-NXG"  onclick="hl('NXG')" ><rect x="468" y="514" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="526" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">NXG</text></g>
+<g class="t-node" id="tn-QQI"  onclick="hl('QQI')" ><rect x="468" y="546" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="558" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">QQI</text></g>
+<g class="t-node" id="tn-CME"  onclick="hl('CME')" ><rect x="468" y="34"  width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="46"  text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">CME</text></g>
+<g class="t-node" id="tn-BSTZ" onclick="hl('BSTZ')"><rect x="468" y="450" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="462" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">BSTZ</text></g>
+<g class="t-node" id="tn-DRAM" onclick="hl('DRAM')"><rect x="468" y="98"  width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/><text class="ts" x="504" y="110" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">DRAM</text></g>
+<g class="t-node" id="tn-VXUS" onclick="hl('VXUS')"><rect x="468" y="130" width="72" height="24" rx="5" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.5"/><text class="ts" x="504" y="142" text-anchor="middle" dominant-baseline="central" fill="#0C447C" font-weight="500">VXUS</text></g>
+<g class="t-node" id="tn-SPCX" onclick="hl('SPCX')"><rect x="468" y="162" width="72" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.5"/><text class="ts" x="504" y="174" text-anchor="middle" dominant-baseline="central" fill="#633806" font-weight="500">SPCX</text></g>
+<g class="t-node" id="tn-DPG"  onclick="hl('DPG')" ><rect x="468" y="194" width="72" height="24" rx="5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/><text class="ts" x="504" y="206" text-anchor="middle" dominant-baseline="central" fill="#085041" font-weight="500">DPG</text></g>
+<g class="t-node" id="tn-ATO"  onclick="hl('ATO')" ><rect x="468" y="226" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/><text class="ts" x="504" y="238" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">ATO</text></g>
+<g class="t-node" id="tn-NEE"  onclick="hl('NEE')" ><rect x="468" y="258" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="ts" x="504" y="270" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">NEE</text></g>
+<g class="t-node" id="tn-GEV"  onclick="hl('GEV')" ><rect x="468" y="290" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="ts" x="504" y="302" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">GEV</text></g>
+<g class="t-node" id="tn-AEP"  onclick="hl('AEP')" ><rect x="468" y="322" width="72" height="24" rx="5" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/><text class="ts" x="504" y="334" text-anchor="middle" dominant-baseline="central" fill="#27500A" font-weight="500">AEP</text></g>
+<g class="t-node" id="tn-JNJ"  onclick="hl('JNJ')" ><rect x="468" y="354" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="366" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">JNJ</text></g>
+<g class="t-node" id="tn-FAST" onclick="hl('FAST')"><rect x="468" y="386" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="398" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">FAST</text></g>
+<g class="t-node" id="tn-XLBI" onclick="hl('XLBI')"><rect x="468" y="418" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="430" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">XLBI</text></g>
+<g class="t-node" id="tn-XLB"  onclick="hl('XLB')" ><rect x="468" y="450" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="462" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">XLB</text></g>
+<g class="t-node" id="tn-PEP"  onclick="hl('PEP')" ><rect x="468" y="482" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="494" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">PEP</text></g>
+<g class="t-node" id="tn-XLSI" onclick="hl('XLSI')"><rect x="468" y="514" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="526" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">XLSI</text></g>
+<g class="t-node" id="tn-VZ"   onclick="hl('VZ')"  ><rect x="468" y="546" width="72" height="24" rx="5" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/><text class="ts" x="504" y="558" text-anchor="middle" dominant-baseline="central" fill="#444441" font-weight="500">VZ</text></g>
 
 <!-- Legend -->
 <rect x="130" y="606" width="9" height="9" rx="2" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
 <text class="ts" x="144" y="614" fill="#854F0B">Tech/semis</text>
-<rect x="222" y="606" width="9" height="9" rx="2" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
-<text class="ts" x="236" y="614" fill="#0F6E56">CEF/income</text>
-<rect x="314" y="606" width="9" height="9" rx="2" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/>
-<text class="ts" x="328" y="614" fill="#3B6D11">Utility</text>
-<rect x="372" y="606" width="9" height="9" rx="2" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
-<text class="ts" x="386" y="614" fill="#5F5E5A">Other</text>
+<rect x="220" y="606" width="9" height="9" rx="2" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="ts" x="234" y="614" fill="#0F6E56">CEF/income</text>
+<rect x="310" y="606" width="9" height="9" rx="2" fill="#C0DD97" stroke="#3B6D11" stroke-width="0.5"/>
+<text class="ts" x="324" y="614" fill="#3B6D11">Utility/infra</text>
+<rect x="400" y="606" width="9" height="9" rx="2" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="ts" x="414" y="614" fill="#5F5E5A">Other</text>
+
 </svg>
-
-<p style="font-size:11px;color:var(--color-text-secondary);text-align:center;margin:4px 0 6px">Click any user or ticker node to highlight connections · click again or ✕ to reset</p>
-
-<!-- Detail pane — below the map, full width -->
-<div id="detail-pane">
-  <div id="dp-header">
-    <div>
-      <span id="dp-badge"></span>
-      <div id="dp-title"></div>
-    </div>
-    <button id="dp-close" onclick="closePane()">close ✕</button>
-  </div>
-  <div id="dp-body"></div>
-</div>
+<p style="font-size:11px;color:var(--color-text-secondary);text-align:center;margin:2px 0 0">Click any user or ticker to highlight connections · click again to reset</p>
 
 <script>
 const edges = {
@@ -175,105 +173,39 @@ const edges = {
   myke:     ['KO'],
 };
 
-const S = {
-  chowder: { label:'Participant', color:'#185FA5', bg:'#E6F1FB', title:'chowder',
-    body:`<strong>Tickers:</strong> NVDA, MU, SMH, ASML, GLW, BST, AIO, NXG, QQI, BSTZ, DRAM, SPXC, ATO, NEE, GEV, JNJ, FAST, PEP, VZ, XLBI, XLB, DPG.<br><br>Trimmed NVDA (barely outperforming market YTD) and MU (to a full position), redirecting proceeds to ASML and GLW. Adding BST, AIO, NXG, QQI to personal portfolio. Retirement Portfolio adds: JNJ (2.3%), VZ (2.1%), PEP (1.6%), MAIN (1.7%), GLW (1.3%), FAST (1.4%). Posted DPG +7.1% dividend raise alert. Shared GEV Simply Wall St analysis (36× fwd PE vs 17× avg). Debating ATO sale — worst YTD utility, may swap into NEE. Legacy Portfolio: DRAM up +15.57%, waiting on add; SPXC down -18% against chowder's wishes. Provided XLB vs XLBI Gemini analysis.`},
-  cemanuel: { label:'Participant', color:'#0F6E56', bg:'#E1F5EE', title:'cemanuel',
-    body:`<strong>Tickers:</strong> NVDA, ATO, NEE, SPCX.<br><br>Debating whether NVDA has another big run or transitions to slower MSFT-like growth. Planning a de-tech from ~70% to ~40% before the mid-terms, with cash as initial destination. Skeptical of buying SPCX early in a hyped IPO. Validated ATO as the utility closest to NEE in growth potential, though he never bought it himself.`},
-  seeks: { label:'Participant', color:'#993C1D', bg:'#FAECE7', title:'SeeksQuality',
-    body:`<strong>Tickers:</strong> ATO, NEE, AEP, TIPS.<br><br>Strongly defended ATO: 10.5% five-year EPS growth, nat gas utility in Texas at the center of the data center boom, raised guidance. Price targets: ATO $202, NEE $98, AEP $151. Sees all three as the "Three Musketeers" of data center energy demand. Built a TIPS ladder 2040–2046 at 2.3%+CPI, average price 0.81 of par; holds in Fidelity IRA; would exit if real yields fall below 1%.`},
-  weather: { label:'Participant', color:'#5B2D8E', bg:'#EDE0F8', title:'weathersystems',
-    body:`<strong>Tickers:</strong> SPCX, MP, USAR.<br><br>Bought SPCX in the open market (no lockup), trimmed after 20% gain in 3 days; still holding for further index-inclusion catalysts. On MP and USAR: held both in Growth IRA, exited when they weakened. MP showing HOLD WEAK (bearish stack). USAR showing HOLD with TURN DOWN signal. Would need trend confirmation before re-entering either.`},
-  jritz: { label:'Participant', color:'#854F0B', bg:'#FAEEDA', title:'jritz0',
-    body:`<strong>Tickers:</strong> NBXG, BST, BSTZ.<br><br>Notes NBXG has caught a bid the last week or so, hopeful it continues. Endorsed buying BST on the Stanford Chemist alert. On BSTZ: sold it years ago purely to reduce tech exposure — not because of the term structure. Both funds have essentially the same cash flow; the choice is about volatility preference.`},
-  max: { label:'Participant', color:'#5F5E5A', bg:'#F1EFE8', title:'Max2.0',
-    body:`<strong>Tickers:</strong> BST, BSTZ.<br><br>Owned both for years; sold BSTZ to reduce tech exposure. Clarified that BSTZ's 2033 term structure is immaterial — CEFs often convert to perpetual before maturity. Both are great BlackRock funds. The Stanford Chemist reversion trade is valid but it's a personal judgment call.`},
-  mac: { label:'Participant', color:'#A32D2D', bg:'#FAECE7', title:'macbolan',
-    body:`<strong>Tickers:</strong> BST, BSTZ, COST, MA.<br><br>Ran the BSTZ→BST income calculation: only ~$200/year improvement. Discounts now close (BSTZ -7%, BST -8%). Sitting on hands, leaning toward keeping BSTZ — "maybe next week." Added a couple of COST shares and 4 more MA shares using incoming dividends — slow and steady adds.`},
-  steve: { label:'Participant', color:'#5F5E5A', bg:'#F1EFE8', title:'Steve Mac',
-    body:`<strong>Tickers:</strong> SPYI, CME.<br><br>Added to SPYI just before the prior day's close. Added CME this morning — it is trying hard to make a new 52-week low, which appears to be his entry trigger.`},
-  qti: { label:'Participant', color:'#185FA5', bg:'#E6F1FB', title:'QTI',
-    body:`<strong>Ticker:</strong> VXUS.<br><br>Bought VXUS across IRA, Roth, and HSAs ahead of ex-dividend date. Targeting 20% VXUS allocation in IRA. Strategy: keep retirement and HSA portfolios simple — broad index exposure only, no individual stocks or CEFs.`},
-  indiv: { label:'Participant', color:'#5F5E5A', bg:'#F1EFE8', title:'InDivGrowthWeTrust',
-    body:`<strong>Ticker:</strong> ATO.<br><br>Validated chowder's original ATO purchase: EPS and dividend growth possibly the highest of any utility. Shared Q2 earnings call data — 51,000+ new customers in the past year (39,000 in Texas), 800 commercial and 4 industrial in Q2. Direct evidence of data center-driven demand.`},
-  mannie: { label:'Participant', color:'#5F5E5A', bg:'#F1EFE8', title:'Mannie',
-    body:`<strong>Tickers:</strong> XLBI, XLSI.<br><br>Started adding XLBI (State Street materials covered call) about a month ago — 15.5% monthly distribution yield. Also holds XLSI (consumer staples CC) at 12.4% yield. High-income, capped-upside structure. Mannie's mention prompted chowder's full Gemini XLB vs XLBI analysis.`},
-  myke: { label:'Participant', color:'#5F5E5A', bg:'#F1EFE8', title:'mykesc2020',
-    body:`<strong>Ticker:</strong> KO.<br><br>Long-term holder. Last split at ~$74, now near $80. Views stock splits as a positive signal of management confidence. No new position changes — observational comment on post-split price action.`},
-  NVDA: { label:'Tech / semis', color:'#854F0B', bg:'#FAEEDA', title:'NVDA — Nvidia',
-    body:`Discussed by <strong>chowder</strong> and <strong>cemanuel</strong>. Chowder trimmed from Legacy Portfolio — barely outperforming market YTD — proceeds going to ASML and GLW. Cemanuel debating whether NVDA has another big pop or transitions to slower MSFT-like growth; leaning toward trimming back to a full position before the mid-terms.`},
-  MU: { label:'Tech / semis', color:'#854F0B', bg:'#FAEEDA', title:'MU / DRAM',
-    body:`<strong>MU (Micron)</strong> discussed by <strong>chowder</strong>: trimmed closer to a full position in Legacy Portfolio, still slightly overweight. Part of the same diversification move as the NVDA reduction.<br><br><strong>DRAM</strong> discussed by <strong>chowder</strong>: bought about a week ago, up +15.57%. Planned to add more but saw it up +10% intraday and decided to wait for a pullback over the long weekend.`},
-  SMH: { label:'Tech / semis', color:'#854F0B', bg:'#FAEEDA', title:'SMH / SPCX',
-    body:`<strong>SMH</strong> discussed by <strong>chowder</strong>: trimmed from Legacy Portfolio as part of diversification. Still holds in Young Folk Portfolio at +449.21%.<br><br><strong>SPCX</strong> discussed by <strong>cemanuel</strong> and <strong>weathersystems</strong>. Weathersystems trimmed after 20% gain in 3 days; still holding for index-inclusion catalysts (Russell/CRSP June 26, MSCI June 29, Nasdaq 100 July 6). Cemanuel skeptical of buying hyped IPOs early.`},
-  ASML: { label:'Tech / semis', color:'#854F0B', bg:'#FAEEDA', title:'ASML / ATO',
-    body:`<strong>ASML</strong> discussed by <strong>chowder</strong>: adding as one of the NVDA/MU trim destinations — equipment/tools layer of the semiconductor supply chain.<br><br><strong>ATO (Atmos Energy)</strong> discussed by <strong>chowder, cemanuel, SeeksQuality, InDivGrowthWeTrust</strong>. Central debate: chowder's worst YTD utility. Alpha Spread: 48% overvalued. SeeksQuality: 10.5% EPS growth, Texas data center demand, price target $202. InDivGrowthWeTrust validated with Q2 customer growth data. Chowder leaning toward selling and swapping into NEE.`},
-  USAR: { label:'Other', color:'#5F5E5A', bg:'#F1EFE8', title:'USAR / NEE',
-    body:`<strong>USAR (USA Rare Earth)</strong> discussed by <strong>weathersystems</strong>: exited Growth IRA when it weakened; HOLD with TURN DOWN signal; needs trend confirmation before re-entry.<br><br><strong>NEE (NextEra Energy)</strong> discussed by <strong>chowder, cemanuel, SeeksQuality</strong>. Price target $98 (SeeksQuality). Chowder's likely swap destination if ATO is sold. One of the "Three Musketeers" of data center energy demand with ATO and AEP.`},
-  GLW: { label:'Tech / semis', color:'#854F0B', bg:'#FAEEDA', title:'GLW / GEV',
-    body:`<strong>GLW (Corning)</strong> discussed by <strong>chowder</strong>: adding as a diversification destination from NVDA/MU trim proceeds; added to Retirement Portfolio at 1.3%.<br><br><strong>GEV (GE Vernova)</strong> discussed by <strong>chowder</strong>: up 21% last week to $1,048.86, forward P/E 36× vs 17× industry average, Simply Wall St intrinsic value $760, total return +115% past year.`},
-  MA: { label:'Other', color:'#5F5E5A', bg:'#F1EFE8', title:'MA / AEP',
-    body:`<strong>MA (Mastercard)</strong> discussed by <strong>macbolan</strong>: added 4 shares to a recently initiated position using incoming dividends.<br><br><strong>AEP (American Electric Power)</strong> discussed by <strong>SeeksQuality</strong>: price target $151, Alpha Spread 11% undervalued. One of the "Three Musketeers" — AEP's transmission lines specifically called out for data center power infrastructure role.`},
-  TIPS: { label:'CEF / income', color:'#0F6E56', bg:'#E1F5EE', title:'TIPS / JNJ',
-    body:`<strong>TIPS</strong> discussed by <strong>SeeksQuality</strong>: built ladder 2040–2046 at 2.3%+CPI, average price 0.81 of par; 4% of brokerage assets; holds in Fidelity IRA; would exit if real yields fall below 1%.<br><br><strong>JNJ (Johnson & Johnson)</strong> discussed by <strong>chowder</strong>: added to Retirement Portfolio, new weight 2.3% — intentionally overweight; healthcare only 6% of portfolio.`},
-  NBXG: { label:'CEF / income', color:'#0F6E56', bg:'#E1F5EE', title:'NBXG / FAST',
-    body:`<strong>NBXG</strong> discussed by <strong>jritz0</strong>: appears to have caught a bid the last week; hopeful it continues. Term trust (2033), next-gen connectivity theme.<br><br><strong>FAST (Fastenal)</strong> discussed by <strong>chowder</strong>: added to Retirement Portfolio at 1.4%; part of the defensive "dividend compounder" build.`},
-  BST: { label:'CEF / income', color:'#0F6E56', bg:'#E1F5EE', title:'BST / XLBI',
-    body:`<strong>BST</strong> discussed by <strong>chowder, jritz0, Max2.0, macbolan</strong>. Chowder adding more to personal portfolio. Stanford Chemist alert: -10.07% discount, Z1Y -2.4 — deepest in 5 years. Max2.0 endorsed. Macbolan still sitting on BSTZ→BST swap after calculating only ~$200/year income improvement.<br><br><strong>XLBI</strong> discussed by <strong>Mannie, chowder</strong>: Mannie adding at 15.5% yield; thin liquidity (10-day vol ~4K); chowder provided Gemini analysis of XLBI vs XLB tradeoffs.`},
-  SPYI: { label:'CEF / income', color:'#0F6E56', bg:'#E1F5EE', title:'SPYI / BSTZ',
-    body:`<strong>SPYI</strong> discussed by <strong>Steve Mac</strong>: added just before prior day's close.<br><br><strong>BSTZ</strong> discussed by <strong>chowder, jritz0, Max2.0, macbolan</strong>. Currently at narrower discount than BST for the first time. Max2.0 sold it to reduce tech exposure, not due to term structure. Macbolan: income comparison only yields ~$200/year vs BST; discounts nearly equal (BSTZ -7%, BST -8%). Sitting on hands.`},
-  AIO: { label:'CEF / income', color:'#0F6E56', bg:'#E1F5EE', title:'AIO / PEP',
-    body:`<strong>AIO (Virtus AI & Technology)</strong> discussed by <strong>chowder</strong>: adding to personal portfolio alongside BST, NXG, QQI. QTI's prior momentum scan: strongest in the book (ST +13.7%, LT +22.9%).<br><br><strong>PEP (PepsiCo)</strong> discussed by <strong>chowder</strong>: added to Retirement Portfolio at 1.6%; ongoing defensive staples build.`},
-  NXG: { label:'CEF / income', color:'#0F6E56', bg:'#E1F5EE', title:'NXG / XLSI',
-    body:`<strong>NXG</strong> discussed by <strong>chowder</strong>: adding to personal portfolio alongside BST, AIO, QQI; also in Rollover IRA income portfolio.<br><br><strong>XLSI</strong> discussed by <strong>Mannie</strong>: consumer staples covered call fund at 12.4% yield; holds alongside XLBI.`},
-  QQI: { label:'CEF / income', color:'#0F6E56', bg:'#E1F5EE', title:'QQI / VZ',
-    body:`<strong>QQI (NEOS Nasdaq-100 High Income)</strong> discussed by <strong>chowder</strong>: adding to personal portfolio alongside BST, AIO, NXG.<br><br><strong>VZ (Verizon)</strong> discussed by <strong>chowder</strong>: added to Retirement Portfolio at 2.1% (slightly overweight); communications sector only 4% of portfolio.`},
-  COST: { label:'Other', color:'#5F5E5A', bg:'#F1EFE8', title:'COST / VXUS',
-    body:`<strong>COST (Costco)</strong> discussed by <strong>macbolan</strong>: added a couple of shares using incoming dividends — slow and steady build.<br><br><strong>VXUS (Vanguard Total International)</strong> discussed by <strong>QTI</strong>: bought across IRA, Roth, HSAs ahead of ex-div; targeting 20% allocation in IRA; keeping retirement/HSA accounts simple with index-only exposure.`},
-  MP: { label:'Other', color:'#5F5E5A', bg:'#F1EFE8', title:'MP / DPG',
-    body:`<strong>MP (MP Materials)</strong> discussed by <strong>weathersystems</strong>: exited Growth IRA when it weakened; HOLD WEAK signal (bearish stack, below all EMAs/SMA).<br><br><strong>DPG (Duff & Phelps Utility & Infrastructure)</strong> discussed by <strong>chowder</strong>: raised dividend 7.1% to $0.075; ex-date July 31, pay August 10. Just Fine has held since Doug Albo recommended it after a prior cut — has done very well on NAV since.`},
-  KO: { label:'Other', color:'#5F5E5A', bg:'#F1EFE8', title:'KO — Coca-Cola',
-    body:`Discussed by <strong>mykesc2020</strong>. Long-term holder. Last split at ~$74, now near $80. Views stock splits as a positive signal of management confidence. No new position activity — observational comment on post-split price action relative to history.`},
-};
-
 let active = null;
 
 function hl(id) {
   const allEdges = document.querySelectorAll('.edge');
   const allUsers = document.querySelectorAll('.u-node');
   const allTickers = document.querySelectorAll('.t-node');
-  if (active === id) { active = null; reset(); closePane(); return; }
+  if (active === id) {
+    active = null;
+    allEdges.forEach(e => e.classList.remove('dim','hi'));
+    allUsers.forEach(n => n.classList.remove('dim'));
+    allTickers.forEach(n => n.classList.remove('dim'));
+    return;
+  }
   active = id;
   const isUser = edges[id] !== undefined;
-  const cu = new Set(); const ct = new Set();
-  if (isUser) { cu.add(id); edges[id].forEach(t => ct.add(t)); }
-  else { for (const [u,tickers] of Object.entries(edges)) { if (tickers.includes(id)) { cu.add(u); ct.add(id); } } }
+  const connectedUsers = new Set();
+  const connectedTickers = new Set();
+  if (isUser) {
+    connectedUsers.add(id);
+    edges[id].forEach(t => connectedTickers.add(t));
+  } else {
+    for (const [u, tickers] of Object.entries(edges)) {
+      if (tickers.includes(id)) { connectedUsers.add(u); connectedTickers.add(id); }
+    }
+  }
   allEdges.forEach(e => {
-    const p = e.id.split('-'); const u = p[1]; const t = p.slice(2).join('-');
-    const m = cu.has(u) && ct.has(t);
-    e.classList.toggle('dim', !m); e.classList.toggle('hi', m);
+    const parts = e.id.split('-');
+    const u = parts[1]; const t = parts.slice(2).join('-');
+    const matched = connectedUsers.has(u) && connectedTickers.has(t);
+    e.classList.toggle('dim', !matched);
+    e.classList.toggle('hi', matched);
   });
-  allUsers.forEach(n => n.classList.toggle('dim', !cu.has(n.id.replace('un-',''))));
-  allTickers.forEach(n => n.classList.toggle('dim', !ct.has(n.id.replace('tn-',''))));
-  showPane(id);
-}
-
-function showPane(id) {
-  const d = S[id]; if (!d) return;
-  document.getElementById('dp-badge').textContent = d.label;
-  document.getElementById('dp-badge').style.cssText = `background:${d.bg};color:${d.color};font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase;display:inline-block;margin-bottom:4px`;
-  document.getElementById('dp-title').textContent = d.title;
-  document.getElementById('dp-body').innerHTML = d.body;
-  document.getElementById('detail-pane').classList.add('visible');
-}
-
-function closePane() {
-  document.getElementById('detail-pane').classList.remove('visible');
-  reset(); active = null;
-}
-
-function reset() {
-  document.querySelectorAll('.edge').forEach(e => e.classList.remove('dim','hi'));
-  document.querySelectorAll('.u-node,.t-node').forEach(n => n.classList.remove('dim'));
+  allUsers.forEach(n => n.classList.toggle('dim', !connectedUsers.has(n.id.replace('un-',''))));
+  allTickers.forEach(n => n.classList.toggle('dim', !connectedTickers.has(n.id.replace('tn-',''))));
 }
 </script>
