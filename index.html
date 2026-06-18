@@ -132,7 +132,7 @@
 <line class="edge" id="e-mac-MA"    x1="114" y1="256" x2="468" y2="334" stroke="#A32D2D" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-steve-SPYI" x1="114" y1="290" x2="468" y2="462" stroke="#888780" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-steve-CME"  x1="114" y1="290" x2="468" y2="46"  stroke="#888780" stroke-width="0.8" opacity=".35"/>
-<line class="edge" id="e-qti-VXUS"   x1="114" y1="324" x2="468" y2="142" stroke="#0C447C" stroke-width="1.2" opacity=".55"/>
+<line class="edge" id="e-qti-VXUS"   x1="114" y1="324" x2="468" y2="326" stroke="#0C447C" stroke-width="1.2" opacity=".55"/>
 <line class="edge" id="e-indiv-ATO"  x1="114" y1="358" x2="468" y2="238" stroke="#888780" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-mannie-XLBI" x1="114" y1="392" x2="468" y2="430" stroke="#888780" stroke-width="0.8" opacity=".35"/>
 <line class="edge" id="e-mannie-XLSI" x1="114" y1="392" x2="468" y2="526" stroke="#888780" stroke-width="0.8" opacity=".35"/>
@@ -192,7 +192,8 @@
 <g class="t-node" id="tn-NVDA" onclick="hl('NVDA')"><rect x="468" y="34"  width="82" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/><text x="509" y="46"  text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#633806">NVDA</text></g>
 <g class="t-node" id="tn-KO"   onclick="hl('KO')"  ><rect x="468" y="66"  width="82" height="24" rx="5" fill="#F1EFE8" stroke="#888780" stroke-width="1"/><text x="509" y="78"  text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#444441">KO</text></g>
 <g class="t-node" id="tn-MU"   onclick="hl('MU')"  ><rect x="468" y="98"  width="82" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/><text x="509" y="110" text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#633806">MU / DRAM</text></g>
-<g class="t-node" id="tn-COST" onclick="hl('COST')"><rect x="468" y="130" width="82" height="24" rx="5" fill="#F1EFE8" stroke="#888780" stroke-width="1"/><text x="509" y="142" text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#444441">COST/VXUS</text></g>
+<g class="t-node" id="tn-COST" onclick="hl('COST')"><rect x="468" y="130" width="82" height="24" rx="5" fill="#F1EFE8" stroke="#888780" stroke-width="1"/><text x="509" y="142" text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#444441">COST</text></g>
+<g class="t-node" id="tn-VXUS" onclick="hl('VXUS')"><rect x="468" y="314" width="82" height="24" rx="5" fill="#B5D4F4" stroke="#185FA5" stroke-width="2"/><text x="509" y="326" text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#0C447C">VXUS</text></g>
 <g class="t-node" id="tn-SMH"  onclick="hl('SMH')" ><rect x="468" y="162" width="82" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/><text x="509" y="174" text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#633806">SMH/SPCX</text></g>
 <g class="t-node" id="tn-MP"   onclick="hl('MP')"  ><rect x="468" y="194" width="82" height="24" rx="5" fill="#F1EFE8" stroke="#888780" stroke-width="1"/><text x="509" y="206" text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#444441">MP / DPG</text></g>
 <g class="t-node" id="tn-ASML" onclick="hl('ASML')"><rect x="468" y="226" width="82" height="24" rx="5" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/><text x="509" y="238" text-anchor="middle" dominant-baseline="central" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="500" fill="#633806">ASML/ATO</text></g>
@@ -293,8 +294,10 @@ const S = {
     body:`<strong>NXG</strong> discussed by <strong>chowder</strong>: adding to personal portfolio alongside BST, AIO, QQI; also in Rollover IRA income portfolio (13.22% YTD).<br><br><strong>XLSI</strong> discussed by <strong>Mannie</strong>: consumer staples covered call fund at 12.4% yield; holds alongside XLBI.`},
   QQI: { label:'CEF / income', color:'#085041', bg:'#E1F5EE', title:'QQI / VZ',
     body:`<strong>QQI (NEOS Nasdaq-100 High Income)</strong> discussed by <strong>chowder</strong>: adding to personal portfolio alongside BST, AIO, NXG.<br><br><strong>VZ (Verizon)</strong> discussed by <strong>chowder</strong>: added to Retirement Portfolio at 2.1% (slightly overweight); communications only 4% of portfolio.`},
-  COST: { label:'Other', color:'#444441', bg:'#F1EFE8', title:'COST / VXUS',
-    body:`<strong>COST (Costco)</strong> discussed by <strong>macbolan</strong>: added a couple of shares using incoming dividends — slow and steady build.<br><br><strong>VXUS (Vanguard Total International)</strong> discussed by <strong>QTI</strong>: bought across IRA, Roth, HSAs ahead of ex-div; targeting 20% allocation in IRA; keeping retirement/HSA accounts simple with index-only exposure.`},
+  COST: { label:'Other', color:'#444441', bg:'#F1EFE8', title:'COST — Costco',
+    body:`Discussed by <strong>macbolan</strong>: added a couple of shares using incoming dividends — slow and steady build.`},
+  VXUS: { label:'Other', color:'#0C447C', bg:'#B5D4F4', title:'VXUS — Vanguard Total International',
+    body:`Discussed by <strong>QTI</strong>. Bought across IRA, Roth, and HSAs ahead of ex-dividend date. Targeting 20% VXUS allocation in IRA. Strategy: keep retirement and HSA portfolios simple — broad index exposure only, no individual stocks or CEFs.`},
   MP: { label:'Other', color:'#444441', bg:'#F1EFE8', title:'MP / DPG',
     body:`<strong>MP (MP Materials)</strong> discussed by <strong>weathersystems</strong>: exited Growth IRA when it weakened; HOLD WEAK signal (bearish stack, below all EMAs/SMA).<br><br><strong>DPG (Duff &amp; Phelps Utility &amp; Infrastructure)</strong> discussed by <strong>chowder</strong>: raised dividend 7.1% to $0.075; ex-date July 31, pay August 10.`},
   KO: { label:'Other', color:'#444441', bg:'#F1EFE8', title:'KO — Coca-Cola',
@@ -302,33 +305,71 @@ const S = {
 };
 
 // Map each edge element ID to its user key and ticker node key
-// Ticker node keys match the tn-* IDs (e.g. 'MU' for tn-MU which covers MU+DRAM)
+// Ticker node keys must match tn-* IDs exactly — one edge → one unique user:node pair
 const edgeMap = {
-  'e-chowder-NVDA':'chowder:NVDA', 'e-chowder-MU':'chowder:MU',
-  'e-chowder-SMH':'chowder:SMH',   'e-chowder-ASML':'chowder:ASML',
-  'e-chowder-GLW':'chowder:GLW',   'e-chowder-BST':'chowder:BST',
-  'e-chowder-AIO':'chowder:AIO',   'e-chowder-NXG':'chowder:NXG',
-  'e-chowder-QQI':'chowder:QQI',   'e-chowder-BSTZ':'chowder:SPYI',
-  'e-chowder-DRAM':'chowder:MU',   'e-chowder-SPXC':'chowder:SMH',
-  'e-chowder-ATO':'chowder:ASML',  'e-chowder-NEE':'chowder:USAR',
-  'e-chowder-GEV':'chowder:GLW',   'e-chowder-JNJ':'chowder:TIPS',
-  'e-chowder-FAST':'chowder:NBXG', 'e-chowder-PEP':'chowder:AIO',
-  'e-chowder-VZ':'chowder:QQI',    'e-chowder-XLBI':'chowder:BST',
-  'e-chowder-XLB':'chowder:SPYI',  'e-chowder-DPG':'chowder:MP',
-  'e-cemanuel-NVDA':'cemanuel:NVDA','e-cemanuel-ATO':'cemanuel:ASML',
-  'e-cemanuel-NEE':'cemanuel:USAR', 'e-cemanuel-SPCX':'cemanuel:SMH',
-  'e-seeks-ATO':'seeks:ASML',  'e-seeks-NEE':'seeks:USAR',
-  'e-seeks-AEP':'seeks:MA',    'e-seeks-TIPS':'seeks:TIPS',
-  'e-weather-SPCX':'weather:SMH','e-weather-MP':'weather:MP',
+  // chowder → tech/semis
+  'e-chowder-NVDA':'chowder:NVDA',
+  'e-chowder-MU':'chowder:MU',
+  'e-chowder-DRAM':'chowder:MU',
+  'e-chowder-SMH':'chowder:SMH',
+  'e-chowder-SPXC':'chowder:SMH',
+  'e-chowder-ASML':'chowder:ASML',
+  'e-chowder-ATO':'chowder:ASML',
+  'e-chowder-GLW':'chowder:GLW',
+  'e-chowder-GEV':'chowder:GLW',
+  // chowder → utility
+  'e-chowder-NEE':'chowder:USAR',
+  // chowder → CEF/income
+  'e-chowder-BST':'chowder:BST',
+  'e-chowder-XLBI':'chowder:BST',
+  'e-chowder-BSTZ':'chowder:SPYI',
+  'e-chowder-XLB':'chowder:SPYI',
+  'e-chowder-AIO':'chowder:AIO',
+  'e-chowder-PEP':'chowder:AIO',
+  'e-chowder-NXG':'chowder:NXG',
+  'e-chowder-QQI':'chowder:QQI',
+  'e-chowder-VZ':'chowder:QQI',
+  // chowder → other
+  'e-chowder-JNJ':'chowder:TIPS',
+  'e-chowder-FAST':'chowder:NBXG',
+  'e-chowder-DPG':'chowder:MP',
+  // cemanuel
+  'e-cemanuel-NVDA':'cemanuel:NVDA',
+  'e-cemanuel-ATO':'cemanuel:ASML',
+  'e-cemanuel-NEE':'cemanuel:USAR',
+  'e-cemanuel-SPCX':'cemanuel:SMH',
+  // seeks
+  'e-seeks-ATO':'seeks:ASML',
+  'e-seeks-NEE':'seeks:USAR',
+  'e-seeks-AEP':'seeks:MA',
+  'e-seeks-TIPS':'seeks:TIPS',
+  // weather
+  'e-weather-SPCX':'weather:SMH',
+  'e-weather-MP':'weather:MP',
   'e-weather-USAR':'weather:USAR',
-  'e-jritz-NBXG':'jritz:NBXG','e-jritz-BST':'jritz:BST','e-jritz-BSTZ':'jritz:SPYI',
-  'e-max-BST':'max:BST','e-max-BSTZ':'max:SPYI',
-  'e-mac-BST':'mac:BST','e-mac-BSTZ':'mac:SPYI',
-  'e-mac-COST':'mac:COST','e-mac-MA':'mac:MA',
-  'e-steve-SPYI':'steve:SPYI','e-steve-CME':'steve:KO',
-  'e-qti-VXUS':'qti:COST',
+  // jritz
+  'e-jritz-NBXG':'jritz:NBXG',
+  'e-jritz-BST':'jritz:BST',
+  'e-jritz-BSTZ':'jritz:SPYI',
+  // max
+  'e-max-BST':'max:BST',
+  'e-max-BSTZ':'max:SPYI',
+  // macbolan — COST gets its own node (no collision with qti)
+  'e-mac-BST':'mac:BST',
+  'e-mac-BSTZ':'mac:SPYI',
+  'e-mac-COST':'mac:COST',
+  'e-mac-MA':'mac:MA',
+  // steve — both edges map to SPYI node only
+  'e-steve-SPYI':'steve:SPYI',
+  'e-steve-CME':'steve:SPYI',
+  // qti — VXUS maps to its own node
+  'e-qti-VXUS':'qti:VXUS',
+  // indiv
   'e-indiv-ATO':'indiv:ASML',
-  'e-mannie-XLBI':'mannie:BST','e-mannie-XLSI':'mannie:NXG',
+  // mannie
+  'e-mannie-XLBI':'mannie:BST',
+  'e-mannie-XLSI':'mannie:NXG',
+  // myke — KO has its own node, no collision
   'e-myke-KO':'myke:KO',
 };
 
